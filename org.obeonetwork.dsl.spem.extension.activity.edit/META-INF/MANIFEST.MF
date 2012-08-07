@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.obeonetwork.dsl.spem.extension.activity.edit;singleton:=true
+Bundle-Version: 0.7.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: activity.provider.ActivityEditPlugin$Implementation
+Bundle-Vendor: Thales Research and Technology
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: activity.provider
+Require-Bundle: org.eclipse.core.runtime,
+ org.obeonetwork.dsl.spem.extension.activity;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport,
+ org.obeonetwork.dsl.spem;visibility:=reexport,
+ org.obeonetwork.dsl.spem.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy

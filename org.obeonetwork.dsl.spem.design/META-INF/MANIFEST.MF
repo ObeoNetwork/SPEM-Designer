@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-Name: Obeo Designer Viewpoint Project
+Bundle-SymbolicName: org.obeonetwork.dsl.spem.design;singleton=true
+Bundle-Version: 0.7.0.qualifier
+Bundle-Activator: org.obeonetwork.dsl.spem.design.Activator
+Require-Bundle: fr.obeo.acceleo.gen,
+ org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.ide;bundle-version="3.6.2",
+ fr.obeo.dsl.viewpoint,
+ org.obeonetwork.dsl.spem,
+ org.obeonetwork.dsl.spem.extensions
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Provide-Package: org.obeonetwork.dsl.spem.design
+Bundle-Vendor: Thales Research and Technology

@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SPEM Doc Wizard
+Bundle-SymbolicName: org.obeonetwork.dsl.spem.gen.doc.wizard;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.obeonetwork.dsl.spem.gen.doc.wizard.Activator
+Require-Bundle: org.eclipse.ui;bundle-version="3.7.0",
+ org.eclipse.core.runtime,
+ org.eclipse.core.expressions;bundle-version="3.4.300",
+ org.eclipse.core.resources;bundle-version="3.7.101",
+ org.eclipse.emf.edit.ui;bundle-version="2.7.0",
+ org.topcased.gendoc2;bundle-version="1.1.0",
+ org.topcased.gendoc2.process;bundle-version="1.1.0",
+ org.topcased.gendoc2.tags.handlers;bundle-version="1.1.0",
+ org.topcased.gendoc2.services;bundle-version="1.1.0",
+ org.topcased.gendoc2.documents;bundle-version="1.1.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.obeonetwork.dsl.spem.gen.doc.wizard

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.obeonetwork.dsl.spem.presentation.SpemModelWizardID"
+            name="%_UI_SpemModelWizard_label"
+            class="org.obeonetwork.dsl.spem.dashboard.SpemModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SpemModelFile.gif">
+         <description>%_UI_SpemModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.obeonetwork.dsl.spem.presentation.SpemEditorID"
+            name="%_UI_SpemEditor_label"
+            icon="icons/full/obj16/SpemModelFile.gif"
+            extensions="spem"
+            class="org.obeonetwork.dsl.spem.presentation.SpemEditor"
+            contributorClass="org.obeonetwork.dsl.spem.presentation.SpemActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.obeonetwork.dsl.spem.uma.presentation.UmaModelWizardID"
+            name="%_UI_UmaModelWizard_label"
+            class="org.obeonetwork.dsl.spem.uma.presentation.UmaModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/UmaModelFile.gif">
+         <description>%_UI_UmaModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.obeonetwork.dsl.spem.uma.presentation.UmaEditorID"
+            name="%_UI_UmaEditor_label"
+            icon="icons/full/obj16/UmaModelFile.gif"
+            extensions="uma"
+            class="org.obeonetwork.dsl.spem.uma.presentation.UmaEditor"
+            contributorClass="org.obeonetwork.dsl.spem.uma.presentation.UmaActionBarContributor">
+      </editor>
+   </extension>
+   
+   
+
+</plugin>

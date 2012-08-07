@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Samples
+Bundle-SymbolicName: org.obeonetwork.dsl.spem.samples;singleton:=true
+Bundle-Version: 0.7.0.qualifier
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-Activator: org.obeonetwork.dsl.spem.samples.SpemSamplesPlugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.ide,
+ org.eclipse.core.resources,
+ org.eclipse.ui.forms,
+ org.obeonetwork.dsl.spem.common
+Export-Package: org.obeonetwork.dsl.spem.samples.wizards
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin

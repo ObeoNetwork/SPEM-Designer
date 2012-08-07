@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.obeonetwork.dsl.spem.extension.lifecycle.presentation.LifecycleModelWizardID"
+            name="%_UI_LifecycleModelWizard_label"
+            class="org.obeonetwork.dsl.spem.extension.lifecycle.presentation.LifecycleModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/LifecycleModelFile.gif">
+         <description>%_UI_LifecycleModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.obeonetwork.dsl.spem.extension.lifecycle.presentation.LifecycleEditorID"
+            name="%_UI_LifecycleEditor_label"
+            icon="icons/full/obj16/LifecycleModelFile.gif"
+            extensions="lifecycle"
+            class="org.obeonetwork.dsl.spem.extension.lifecycle.presentation.LifecycleEditor"
+            contributorClass="org.obeonetwork.dsl.spem.extension.lifecycle.presentation.LifecycleActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

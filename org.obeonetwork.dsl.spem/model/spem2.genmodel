@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.obeonetwork.dsl.spem/src"
+    modelPluginID="org.obeonetwork.dsl.spem" modelName="Spem2" testsDirectory="" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="6.0" copyrightFields="false">
+  <foreignModel>spem2.ecore</foreignModel>
+  <genPackages prefix="Spem" basePackage="org.obeonetwork.dsl" disposableProviderFactory="true"
+      ecorePackage="spem2.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="spem2.ecore#//ParameterDirectionKind">
+      <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//ParameterDirectionKind/in"/>
+      <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//ParameterDirectionKind/out"/>
+      <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//ParameterDirectionKind/inout"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="spem2.ecore#//WorkSequenceKind">
+      <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//WorkSequenceKind/finishToStart"/>
+      <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//WorkSequenceKind/finishToFinish"/>
+      <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//WorkSequenceKind/startToStart"/>
+      <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//WorkSequenceKind/startToFinish"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="spem2.ecore#//ActivityUseKind">
+      <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//ActivityUseKind/na"/>
+      <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//ActivityUseKind/extension"/>
+      <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//ActivityUseKind/localContribution"/>
+      <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//ActivityUseKind/localReplacement"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="spem2.ecore#//OptionalityKind">
+      <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//OptionalityKind/mandatory"/>
+      <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//OptionalityKind/optional"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="spem2.ecore#//VariabilityType">
+      <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//VariabilityType/na"/>
+      <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//VariabilityType/contributes"/>
+      <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//VariabilityType/extends"/>
+      <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//VariabilityType/replaces"/>
+      <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//VariabilityType/extends_replaces"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="spem2.ecore#//WorkProductRelationshipKind">
+      <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//WorkProductRelationshipKind/impactedBy"/>
+      <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//WorkProductRelationshipKind/composition"/>
+      <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//WorkProductRelationshipKind/aggregation"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="spem2.ecore#//ExtensibleElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//ExtensibleElement/kind"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//Kind"/>
+    <genClasses image="false" ecoreClass="spem2.ecore#//WorkDefinitionPerformer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//WorkDefinitionPerformer/linkedWorkDefinition"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="spem2.ecore#//WorkDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//WorkDefinition/preCondition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//WorkDefinition/postCondition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//WorkDefinition/ownedParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//WorkDefinitionParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//WorkDefinitionParameter/direction"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="spem2.ecore#//BreakdownElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//BreakdownElement/hasMultipleOccurrences"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//BreakdownElement/isOptional"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//BreakdownElement/isPlanned"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//BreakdownElement/planningData"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="spem2.ecore#//WorkBreakdownElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//WorkBreakdownElement/isRepeatable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//WorkBreakdownElement/isOngoing"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//WorkBreakdownElement/isEventDriven"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//WorkBreakdownElement/linkToPredecessor"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//WorkBreakdownElement/linkToSuccessor"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//WorkSequence">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//WorkSequence/linkKind"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//WorkSequence/predecessor"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//WorkSequence/successor"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//Activity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//Activity/useKind"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//Activity/usedActivity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//Activity/nestedBreakdownElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//Activity/suppressedBreakdownElement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//Activity/ownedProcessParameter"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//Activity/defaultContext"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//Activity/validContext"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//Activity/isEnactable"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//ProcessPerformer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//ProcessPerformer/linkedRoleUse"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//ProcessPerformer/linkedActivity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//ProcessPerformer/linkedTaskUse"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//RoleUse">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//RoleUse/role"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//RoleUse/appliedQualification"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//ProcessResponsibilityAssignment">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//ProcessResponsibilityAssignment/linkedRoleUse"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//ProcessResponsibilityAssignment/linkedWorkProductUse"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//WorkProductUse">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//WorkProductUse/workProduct"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//WorkProductUseRelationship">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//WorkProductUseRelationship/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//WorkProductUseRelationship/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//WorkProductUseRelationship/relationshipKind"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//ProcessParameter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//ProcessParameter/parameterType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//ProcessParameter/optionality"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//Milestone">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//Milestone/requiredResult"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="spem2.ecore#//ProcessElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//ProcessElement/processKind"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="spem2.ecore#//DescribableElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//DescribableElement/presentationName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//DescribableElement/briefDescription"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//DescribableElement/mainDescription"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//DescribableElement/purpose"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//DescribableElement/guidance"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//DescribableElement/metric"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//DescribableElement/category"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//DescribableElement/copyright"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//DescribableElement/author"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//DescribableElement/changeDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//DescribableElement/changeDescription"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//DescribableElement/version"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//Category">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//Category/subCategory"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//Category/categorizedElement"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//Guidance"/>
+    <genClasses ecoreClass="spem2.ecore#//Metric">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//Metric/expression"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="spem2.ecore#//MethodContentElement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//MethodContentElement/methodContentKind"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//ToolDefinition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//ToolDefinition/managedWorkProduct"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//TaskDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//TaskDefinition/ownedTaskDefinitionParameter"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//TaskDefinition/usedTool"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//TaskDefinition/step"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//TaskDefinition/requiredQualification"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//Step">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//Step/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//Step/predecessor"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//Step/successor"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//WorkProductDefinition"/>
+    <genClasses ecoreClass="spem2.ecore#//RoleDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//RoleDefinition/synonym"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//RoleDefinition/providedQualification"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//WorkProductDefinitionRelationship">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//WorkProductDefinitionRelationship/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//WorkProductDefinitionRelationship/target"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//Default_TaskDefinitionPerformer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//Default_TaskDefinitionPerformer/linkedTaskDefinition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//Default_TaskDefinitionPerformer/linkedRoleDefinition"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//Default_ResponsibilityAssignment">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//Default_ResponsibilityAssignment/linkedRoleDefinition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//Default_ResponsibilityAssignment/linkedWorkProductDefinition"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//Default_TaskDefinitionParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//Default_TaskDefinitionParameter/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//Default_TaskDefinitionParameter/parameterType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//Default_TaskDefinitionParameter/optionality"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//Qualification"/>
+    <genClasses image="false" ecoreClass="spem2.ecore#//MethodContentPackageableElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//MethodContentPackageableElement/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="spem2.ecore#//ProcessPackageableElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//ProcessPackageableElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//MethodContentPackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//MethodContentPackage/ownedMethodContentMember"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//MethodContentPackage/reusedPackage"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//ProcessPackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//ProcessPackage/ownedProcessMember"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="spem2.ecore#//MethodContentKind"/>
+    <genClasses image="false" ecoreClass="spem2.ecore#//ProcessKind"/>
+    <genClasses ecoreClass="spem2.ecore#//PlanningData">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//PlanningData/startDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//PlanningData/finishDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//PlanningData/rank"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//PlanningData/duration"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="spem2.ecore#//MethodContentUse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//MethodContentUse/isSynchronizedWithSource"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//TaskUse">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//TaskUse/task"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//TaskUse/usedQualification"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//TaskUse/selectedStep"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//TaskUse/ownedProcessParameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//TaskUse/preCondition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//TaskUse/postCondition"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//CompositeRole">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//CompositeRole/aggregatedRole"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//TeamProfile">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//TeamProfile/subTeam"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference spem2.ecore#//TeamProfile/superTeam"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//TeamProfile/teamRole"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="spem2.ecore#//VariabilityElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//VariabilityElement/variabilityType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//VariabilityElement/variabilityBasedOnElement"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//ProcessComponent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//ProcessComponent/process"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//ProcessComponent/ownedPort"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//ProcessComponentUse">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//ProcessComponentUse/processComponent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//ProcessComponentUse/usedPort"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="spem2.ecore#//MethodLibraryPackageableElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//MethodLibraryPackageableElement/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="spem2.ecore#//MethodPluginPackageableElement"/>
+    <genClasses ecoreClass="spem2.ecore#//MethodConfiguration">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//MethodConfiguration/baseConfiguration"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//MethodConfiguration/methodPluginSelection"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//MethodConfiguration/processPackageSelection"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//MethodConfiguration/contentPackageSelection"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//MethodConfiguration/substractedCategory"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//MethodConfiguration/defaultView"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//MethodConfiguration/processView"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//MethodPlugin">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//MethodPlugin/ownedMethodContentPackage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//MethodPlugin/ownedProcessPackage"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//MethodPlugin/basePlugin"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//MethodLibrary">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//MethodLibrary/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//MethodLibrary/ownedMethodPlugin"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//MethodLibrary/predefinedConfiguration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//MethodLibrary/configurationPackage"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//WorkProductPort">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//WorkProductPort/isOptional"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//WorkProductPort/portKind"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//WorkProductPort/portType"/>
+    </genClasses>
+    <genClasses ecoreClass="spem2.ecore#//WorkProductPortConnector">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference spem2.ecore#//WorkProductPortConnector/connectedPort"/>
+    </genClasses>
+    <nestedGenPackages prefix="Uma" disposableProviderFactory="true" ecorePackage="spem2.ecore#//uma">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="spem2.ecore#//uma/RiskLevel">
+        <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//uma/RiskLevel/LOW"/>
+        <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//uma/RiskLevel/MID"/>
+        <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//uma/RiskLevel/HIGH"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="spem2.ecore#//uma/EstimatingTechnique">
+        <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//uma/EstimatingTechnique/COST"/>
+        <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//uma/EstimatingTechnique/TIME"/>
+        <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//uma/EstimatingTechnique/SKILLS"/>
+        <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//uma/EstimatingTechnique/DEFECTS"/>
+        <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//uma/EstimatingTechnique/OTHER"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="spem2.ecore#//uma/ExpertiseLevel">
+        <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//uma/ExpertiseLevel/LOW"/>
+        <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//uma/ExpertiseLevel/MID"/>
+        <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//uma/ExpertiseLevel/LEVEL"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="spem2.ecore#//uma/ContractKind">
+        <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//uma/ContractKind/EXPRESS"/>
+        <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//uma/ContractKind/IMPLIED"/>
+        <genEnumLiterals ecoreEnumLiteral="spem2.ecore#//uma/ContractKind/OTHER"/>
+      </genEnums>
+      <genClasses ecoreClass="spem2.ecore#//uma/Artifact">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//uma/Artifact/containedArtifact"/>
+      </genClasses>
+      <genClasses ecoreClass="spem2.ecore#//uma/CapabilityPattern"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/Checklist"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/Concept"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/CategoryPackage"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/CustomCategory"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/Deliverable">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference spem2.ecore#//uma/Deliverable/deliveredProduct"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//uma/Deliverable/externalDescription"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//uma/Deliverable/packagingGuidance"/>
+      </genClasses>
+      <genClasses ecoreClass="spem2.ecore#//uma/Process">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//uma/Process/includedPattern"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//uma/Process/scope"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//uma/Process/usageNote"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//uma/Process/includedConnector"/>
+      </genClasses>
+      <genClasses ecoreClass="spem2.ecore#//uma/DeliveryProcess">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//uma/DeliveryProcess/scale"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//uma/DeliveryProcess/projectCharacteristics"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//uma/DeliveryProcess/riskLevel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//uma/DeliveryProcess/estimatingTechnique"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//uma/DeliveryProcess/projectMemberExpertise"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//uma/DeliveryProcess/typeOfContract"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference spem2.ecore#//uma/DeliveryProcess/communicationMaterial"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference spem2.ecore#//uma/DeliveryProcess/educationalMaterial"/>
+      </genClasses>
+      <genClasses ecoreClass="spem2.ecore#//uma/Discipline">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference spem2.ecore#//uma/Discipline/relatedTask"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference spem2.ecore#//uma/Discipline/relatedWorflow"/>
+      </genClasses>
+      <genClasses ecoreClass="spem2.ecore#//uma/DisciplineGrouping"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/Root">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//uma/Root/methodConfiguration"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//uma/Root/methodLibrary"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//uma/Root/MethodPlugin"/>
+      </genClasses>
+      <genClasses ecoreClass="spem2.ecore#//uma/Domain">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference spem2.ecore#//uma/Domain/relatedProduct"/>
+      </genClasses>
+      <genClasses ecoreClass="spem2.ecore#//uma/EstimatingConsideration"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/Example"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/Iteration"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/Outcome"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/Phase"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/Practice">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//uma/Practice/subPractice"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference spem2.ecore#//uma/Practice/referencedActivity"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference spem2.ecore#//uma/Practice/contentReference"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//uma/Practice/additionalInfo"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//uma/Practice/application"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//uma/Practice/background"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//uma/Practice/goal"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//uma/Practice/levelOfAdoption"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute spem2.ecore#//uma/Practice/problem"/>
+      </genClasses>
+      <genClasses ecoreClass="spem2.ecore#//uma/ProcessPlanningTemplate">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference spem2.ecore#//uma/ProcessPlanningTemplate/baseProcess"/>
+      </genClasses>
+      <genClasses ecoreClass="spem2.ecore#//uma/Report"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/ReusableAsset"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/Roadmap"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/Template"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/TermDefinition"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/ToolMentor"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/Whitepaper"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/Guideline"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/SupportingMaterial"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/RoleDefinitionPackage"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/TaskDefinitionPackage"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/WorkProductDefinitionPackage"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/GuidancePackage"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/DisciplinePackage"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/DomainPackage"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/WorkProductKindPackage"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/RoleSetPackage"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/ToolDefinitionPackage"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/ConfigurationPackage">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference spem2.ecore#//uma/ConfigurationPackage/ownedConfiguration"/>
+      </genClasses>
+      <genClasses ecoreClass="spem2.ecore#//uma/CapabilityPatternPackage"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/DeliveryProcessPackage"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/RoleSet">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference spem2.ecore#//uma/RoleSet/role"/>
+      </genClasses>
+      <genClasses ecoreClass="spem2.ecore#//uma/QualificationPackage"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/ProcessComponentPackage"/>
+      <genClasses ecoreClass="spem2.ecore#//uma/WorkProductKind"/>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

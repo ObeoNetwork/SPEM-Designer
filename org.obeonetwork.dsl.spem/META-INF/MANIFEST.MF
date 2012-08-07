@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.obeonetwork.dsl.spem;singleton:=true
+Bundle-Version: 0.7.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: Thales Research and Technology
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: org.obeonetwork.dsl.spem,
+ org.obeonetwork.dsl.spem.impl,
+ org.obeonetwork.dsl.spem.uma,
+ org.obeonetwork.dsl.spem.uma.impl,
+ org.obeonetwork.dsl.spem.uma.util,
+ org.obeonetwork.dsl.spem.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport
+Bundle-ActivationPolicy: lazy

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ASCII"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.obeo.fr/dsl/viewpoint/description/1.1.0" xmlns:style="http://www.obeo.fr/dsl/viewpoint/description/style/1.1.0" xmlns:tool="http://www.obeo.fr/dsl/viewpoint/description/tool/1.1.0" name="bigpicture">
+  <eAnnotations source="Migration">
+    <details key="SemanticCandidatesExpressionBehaviorChange" value=""/>
+    <details key="LabelAlignmentForDNodeListElementMappingMigrationForBehaviourPresevation" value=""/>
+    <details key="LabelAlignmentForAbstractDNodeMappingMigrationForBehaviourPresevation" value=""/>
+    <details key="SVG.BundledImageDescription.BorderColor" value=""/>
+  </eAnnotations>
+  <ownedViewpoints name="SPEM - Big Picture">
+    <ownedRepresentations xsi:type="description:DiagramDescription" name="Platform Definition" titleExpression="Platform Definition" domainClass="spem.MethodLibrary">
+      <metamodel href="../../org.obeonetwork.dsl.spem/model/spem2.ecore#/"/>
+      <metamodel href="../../org.obeonetwork.dsl.spem/model/spem2.ecore#//uma"/>
+      <metamodel href="../../org.obeonetwork.dsl.spem.extension.bigpicture/model/bigpicture.ecore#/"/>
+      <diagramInitialisation>
+        <firstModelOperations xsi:type="tool:ChangeContext">
+          <subModelOperations xsi:type="tool:If" conditionExpression="&lt;%any.filter(&quot;BigPicture&quot;)==null%>">
+            <subModelOperations xsi:type="tool:CreateInstance" typeName="bigpicture.BigPicture" referenceName="any" variableName="bigPicture"/>
+          </subModelOperations>
+          <subModelOperations xsi:type="tool:If" conditionExpression="&lt;%any.filter(&quot;BigPicture&quot;).platform==null%>">
+            <subModelOperations xsi:type="tool:ChangeContext" browseExpression="&lt;%any.filter(&quot;BigPicture&quot;)%>">
+              <subModelOperations xsi:type="tool:CreateInstance" typeName="bigpicture.Platform" referenceName="platform"/>
+            </subModelOperations>
+          </subModelOperations>
+        </firstModelOperations>
+      </diagramInitialisation>
+      <defaultLayer name="Default">
+        <containerMappings name="Work Package" label="Work Package" semanticCandidatesExpression="&lt;%any.platform.workPackages%>" domainClass="bigpicture.WorkPackage">
+          <subContainerMappings name="TaskBP" semanticCandidatesExpression="&lt;%tasks%>" domainClass="bigpicture.TaskBP">
+            <style xsi:type="style:FlatContainerStyleDescription" showIcon="false">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" showIcon="false">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Default">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Work Package" containerMappings="//@ownedViewpoints[name='SPEM%20-%20Big%20Picture']/@ownedRepresentations[name='Platform%20Definition']/@defaultLayer/@containerMappings[name='Work%20Package']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="&lt;%any.platform%>">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="bigpicture.WorkPackage" referenceName="workPackages"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="TaskBP" label="Task" containerMappings="//@ownedViewpoints[name='SPEM%20-%20Big%20Picture']/@ownedRepresentations[name='Platform%20Definition']/@defaultLayer/@containerMappings[name='Work%20Package']/@subContainerMappings[name='TaskBP']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:CreateInstance" typeName="bigpicture.TaskBP" referenceName="tasks"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentationExtensions xsi:type="description:DiagramExtensionDescription" name="Workflow Diagram Extension for Big Picture" viewpointURI="viewpoint:/org.obeonetwork.dsl.spem.design/SPEM Workflow Capture" representationName="Workflow Diagram">
+      <layers name="Big Picture" activeByDefault="true">
+        <toolSections name="Big Picture">
+          <ownedTools xsi:type="tool:DiagramCreationDescription" name="Create Use Case">
+            <containerViewVariable name="containerView"/>
+            <representationNameVariable name="diagramName"/>
+          </ownedTools>
+        </toolSections>
+      </layers>
+    </ownedRepresentationExtensions>
+  </ownedViewpoints>
+</description:Group>

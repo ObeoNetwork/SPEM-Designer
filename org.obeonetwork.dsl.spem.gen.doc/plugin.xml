@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="org.obeonetwork.dsl.spem.gen.doc.wizard.runner" name="SPEM Gendoc2 Extension Point" schema="schema/org.obeonetwork.dsl.spem.gen.doc.wizard.runner.exsd"/>
+   <extension
+         point="org.obeonetwork.dsl.spem.gen.doc.wizard.runner">
+      <GenDoc2Element
+            Instance="org.obeonetwork.dsl.spem.gen.doc.SpemGendoc2Runner">
+      </GenDoc2Element>
+   </extension>
+
+</plugin>

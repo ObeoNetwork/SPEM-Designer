@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SPEM Doc
+Bundle-SymbolicName: org.obeonetwork.dsl.spem.doc; singleton:=true
+Bundle-Version: 0.7.0.qualifier

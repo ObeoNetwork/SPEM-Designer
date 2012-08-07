@@ -1,0 +1,36 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Spem</groupId>
+  <artifactId>org.obeonetwork.dsl.spem.aggregator</artifactId>
+  <version>0.7.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <modules>
+  <module>org.obeonetwork.dsl.spem.parent</module>
+  <module>../org.obeonetwork.dsl.spem</module>
+  <module>../org.obeonetwork.dsl.spem.dashboard</module>
+  <module>../org.obeonetwork.dsl.spem.design</module>
+  <module>../org.obeonetwork.dsl.spem.edit</module>
+  <module>../org.obeonetwork.dsl.spem.editor</module>
+  <module>../org.obeonetwork.dsl.spem.extensions</module>
+  <module>../org.obeonetwork.dsl.spem.common</module>
+  <module>../org.obeonetwork.dsl.spem.properties</module>
+  <module>../org.obeonetwork.dsl.spem.doc</module>
+  <module>../org.obeonetwork.dsl.spem.samples</module>
+  <module>../org.obeonetwork.dsl.spem.samples.pack.core</module>
+  <module>../org.obeonetwork.dsl.spem.extension.activity</module>
+  <module>../org.obeonetwork.dsl.spem.extension.activity.edit</module>
+  <module>../org.obeonetwork.dsl.spem.extension.activity.editor</module>
+  <module>../org.obeonetwork.dsl.spem.extension.activity.design</module>
+  <module>../org.obeonetwork.dsl.spem.extension.lifecycle</module>
+  <module>../org.obeonetwork.dsl.spem.extension.lifecycle.edit</module>
+  <module>../org.obeonetwork.dsl.spem.extension.lifecycle.editor</module>
+  <module>../org.obeonetwork.dsl.spem.extension.lifecycle.design</module>
+  <module>../org.obeonetwork.dsl.spem.extension.bigpicture</module>
+  <module>../org.obeonetwork.dsl.spem.extension.bigpicture.edit</module>
+  <module>../org.obeonetwork.dsl.spem.extension.bigpicture.editor</module>
+  <module>../org.obeonetwork.dsl.spem.extension.bigpicture.design</module>
+  <module>org.obeonetwork.dsl.spem.feature</module>
+  <module>org.obeonetwork.dsl.spem.extension.feature</module>
+  <module>org.obeonetwork.dsl.spem.repository</module>
+  </modules>
+</project>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="org.obeonetwork.dsl.spem.presentation.SpemEEFEditorID"
+            name="Spem EEF Editor"
+            icon="icons/full/obj16/SpemModelFile.gif"
+            extensions="spem"
+            class="org.obeonetwork.dsl.spem.properties.presentation.SpemEEFEditor"
+            contributorClass="org.obeonetwork.dsl.spem.presentation.SpemActionBarContributor">
+      </editor>
+   </extension>
+
+
+  <!-- EEF extensions -->
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.thalesgroup.com/spem/2.0/uma"
+            class="org.obeonetwork.dsl.spem.providers.UmaEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+            uri="http://www.thalesgroup.com/spem/2.0"
+            class="org.obeonetwork.dsl.spem.providers.SpemEEFAdapterFactory"
+            supportedTypes="org.eclipse.emf.eef.runtime.providers.PropertiesEditingProvider"/>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.obeonetwork.dsl.spem.providers.SpemPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+   <extension
+         point="org.eclipse.emf.eef.runtime.PropertiesEditionPartProvider">
+      <PropertiesEditionPartProvider
+            providerClass="org.obeonetwork.dsl.spem.uma.providers.UmaPropertiesEditionPartProvider">
+      </PropertiesEditionPartProvider>
+   </extension>
+
+   <!-- Tabbed properties views extension -->
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
+      <propertyContributor
+            contributorId="fr.obeo.dsl.viewpoint.diagram">
+         <propertyCategory
+               category="default">
+         </propertyCategory>
+         <propertyCategory
+               category="extended">
+         </propertyCategory>
+         <propertyCategory
+               category="advanced">
+         </propertyCategory>
+      </propertyContributor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertyTabs">
+      <propertyTabs
+            contributorId="fr.obeo.dsl.viewpoint.diagram ">
+         <propertyTab
+               label="Base"
+               category="default"
+               id="Base">
+         </propertyTab>
+      </propertyTabs>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views.properties.tabbed.propertySections">
+      <propertySections
+            contributorId="fr.obeo.dsl.viewpoint.diagram ">
+         <propertySection
+               class="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection"
+               id="org.obeonetwork.dsl.spem.section.WorkDefinitionParameter"
+               tab="Base"
+               filter="org.eclipse.emf.eef.runtime.ui.properties.sections.PropertiesEditionSection">
+         </propertySection>
+      </propertySections>
+   </extension>
+ </plugin>

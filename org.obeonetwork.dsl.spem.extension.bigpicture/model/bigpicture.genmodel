@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.obeonetwork.dsl.spem.extension.bigpicture/src"
+    modelPluginID="org.obeonetwork.dsl.spem.extension.bigpicture" modelName="Bigpicture"
+    testsDirectory="" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" usedGenPackages="platform:/plugin/org.obeonetwork.dsl.spem/model/spem2.genmodel#//spem">
+  <foreignModel>bigpicture.ecore</foreignModel>
+  <genPackages prefix="Bigpicture" disposableProviderFactory="true" ecorePackage="bigpicture.ecore#/">
+    <genClasses ecoreClass="bigpicture.ecore#//BigPicture">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bigpicture.ecore#//BigPicture/platform"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bigpicture.ecore#//BigPicture/useCases"/>
+    </genClasses>
+    <genClasses ecoreClass="bigpicture.ecore#//Platform">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bigpicture.ecore#//Platform/workPackages"/>
+    </genClasses>
+    <genClasses ecoreClass="bigpicture.ecore#//WorkPackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bigpicture.ecore#//WorkPackage/tasks"/>
+    </genClasses>
+    <genClasses ecoreClass="bigpicture.ecore#//TaskBP"/>
+    <genClasses ecoreClass="bigpicture.ecore#//ActivityBP">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bigpicture.ecore#//ActivityBP/name"/>
+    </genClasses>
+    <genClasses ecoreClass="bigpicture.ecore#//UseCase">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bigpicture.ecore#//UseCase/assignments"/>
+    </genClasses>
+    <genClasses ecoreClass="bigpicture.ecore#//Assignment">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bigpicture.ecore#//Assignment/activity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference bigpicture.ecore#//Assignment/workBreakdownElement"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

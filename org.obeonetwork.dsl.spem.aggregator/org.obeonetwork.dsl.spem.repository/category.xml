@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.obeonetwork.dsl.spem.feature_0.7.0.qualifier.jar" id="org.obeonetwork.dsl.spem.feature" version="0.7.0.qualifier">
+      <category name="Spem-Editor"/>
+   </feature>
+   <feature url="features/org.obeonetwork.dsl.spem.extension.feature_0.7.0.qualifier.jar" id="org.obeonetwork.dsl.spem.extension.feature" version="0.7.0.qualifier">
+      <category name="Spem-Editor"/>
+   </feature>
+   <category-def name="Spem-Editor" label="SPEM Editor"/>
+</site>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="false"
+            category="org.eclipse.ui"
+            class="org.obeonetwork.dsl.spem.dashboard.DashboardPart"
+            id="fr.thales.dsl.spem.dashboard.Dashboard"
+            name="SPEM Dashboard"
+            restorable="true">
+      </view>
+   </extension>
+
+</plugin>

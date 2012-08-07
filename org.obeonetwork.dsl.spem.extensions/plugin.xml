@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+        point="org.eclipse.ui.editors">
+     <editor
+           class="org.obeonetwork.dsl.spem.extensions.DescriptionEditor"
+           contributorClass="org.obeonetwork.dsl.spem.extensions.DescriptionEditorActionBarContributor"
+           default="false"
+           icon="icons/Description.gif"
+           id="org.obeonetwork.dsl.spem.design.descriptionEditor"
+           name="Description Editor">
+     </editor>
+  </extension>
+
+</plugin>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+  <extension point="fr.obeo.dsl.viewpoint.componentization">
+    <component class="org.obeonetwork.dsl.spem.design.Activator"
+               id="fr.thales.dsl.spem.design"
+	       name="spem">
+    </component>
+  </extension>
+  <extension
+        point="fr.obeo.dsl.viewpoint.externalJavaAction">
+     <javaActions
+           actionClass="org.obeonetwork.dsl.spem.design.actions.OpenDescriptionAction"
+           id="org.obeonetwork.dsl.spem.openDescriptionAction">
+     </javaActions>
+  </extension>
+</plugin>

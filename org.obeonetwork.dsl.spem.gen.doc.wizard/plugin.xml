@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="org.obeonetwork.dsl.spem.gen.doc.wizard.runner" name="SPEM Gendoc2 Extension Point" schema="schema/org.obeonetwork.dsl.spem.gen.doc.wizard.runner.exsd"/>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="org.obeonetwork.dsl.spem.gen.doc.wizard.popup.actions.GenerateDocumentationHandler"
+            description="generate the documentation"
+            id="org.obeonetwork.dsl.spem.gen.doc.wizard.GenerateDoc"
+            name="Generate SPEM Documentation">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any">
+         <command
+               commandId="org.obeonetwork.dsl.spem.gen.doc.wizard.GenerateDoc"
+               label="Generate SPEM Documentation"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <iterate
+                     ifEmpty="false">
+                  <adapt
+                        type="org.eclipse.core.resources.IFile">
+                     <test
+                           property="org.obeonetwork.dsl.spem.gen.doc.wizard.isEnabled">
+                     </test>
+                  </adapt>
+               </iterate>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.propertyTesters">
+      <propertyTester
+            class="org.obeonetwork.dsl.spem.gen.doc.wizard.WizardPropertyTester"
+            id="org.obeonetwork.dsl.spem.gen.doc.wizard.propertytester"
+            namespace="org.obeonetwork.dsl.spem.gen.doc.wizard"
+            properties="isEnabled"
+            type="org.eclipse.core.resources.IFile">
+      </propertyTester>
+   </extension>
+
+</plugin>

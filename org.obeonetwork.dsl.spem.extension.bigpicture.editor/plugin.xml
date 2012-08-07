@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="bigpicture.presentation.BigpictureModelWizardID"
+            name="%_UI_BigpictureModelWizard_label"
+            class="bigpicture.presentation.BigpictureModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/BigpictureModelFile.gif">
+         <description>%_UI_BigpictureModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="bigpicture.presentation.BigpictureEditorID"
+            name="%_UI_BigpictureEditor_label"
+            icon="icons/full/obj16/BigpictureModelFile.gif"
+            extensions="bigpicture"
+            class="bigpicture.presentation.BigpictureEditor"
+            contributorClass="bigpicture.presentation.BigpictureActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.topcased.gendoc2.script.acceleo.services">
+      <service
+            emtl="bin/org/obeonetwork/dsl/spem/gen/doc/services/common/SpemServices.emtl"
+            importedByDefault="false"
+            name="SpemServices">
+      </service>
+   </extension>
+
+</plugin>

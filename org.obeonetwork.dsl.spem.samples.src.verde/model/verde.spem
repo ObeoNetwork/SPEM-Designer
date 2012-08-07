@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="ASCII"?>
+<spem:MethodLibrary xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activity="http://www.thalesgroup.com/spem/2.0/activity" xmlns:spem="http://www.thalesgroup.com/spem/2.0" xmlns:uma="http://www.thalesgroup.com/spem/2.0/uma">
+  <ownedMethodPlugin name="verde">
+    <ownedMethodContentPackage name="Method Content">
+      <ownedMethodContentMember xsi:type="uma:RoleDefinitionPackage" name="Roles">
+        <ownedMethodContentMember xsi:type="spem:RoleDefinition" presentationName="Requirements Engineer" name="Requirements Engineer"/>
+        <ownedMethodContentMember xsi:type="spem:RoleDefinition" presentationName="Quality Manager" name="Quality Manager"/>
+        <ownedMethodContentMember xsi:type="spem:RoleDefinition" presentationName="End User" name="End User"/>
+        <ownedMethodContentMember xsi:type="spem:RoleDefinition" presentationName="System Architect" name="System Architect"/>
+        <ownedMethodContentMember xsi:type="spem:RoleDefinition" presentationName="Modeling Expert" name="Modeling Expert"/>
+        <ownedMethodContentMember xsi:type="spem:RoleDefinition" presentationName="Hardware Expert" name="Hardware Expert"/>
+        <ownedMethodContentMember xsi:type="spem:RoleDefinition" presentationName="Detailled Designer" name="Detailled Designer"/>
+        <ownedMethodContentMember xsi:type="spem:RoleDefinition" presentationName="Test Engineer" name="Test Engineer"/>
+      </ownedMethodContentMember>
+      <ownedMethodContentMember xsi:type="uma:TaskDefinitionPackage" name="Tasks">
+        <ownedMethodContentMember xsi:type="spem:TaskDefinition" presentationName="Define Requirements Structure" name="Define Requirements Structure" usedTool="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.4/@ownedMethodContentMember.5/@ownedMethodContentMember.54">
+          <ownedTaskDefinitionParameter direction="out" name="Requirements Structure" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.0"/>
+        </ownedMethodContentMember>
+        <ownedMethodContentMember xsi:type="spem:TaskDefinition" presentationName="Define Requirements Rules Set" name="Define Requirements Rules Set">
+          <ownedTaskDefinitionParameter name="Requirements Structure" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.0"/>
+          <ownedTaskDefinitionParameter direction="out" name="Requirements Rule Set" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.1"/>
+        </ownedMethodContentMember>
+        <ownedMethodContentMember xsi:type="spem:TaskDefinition" presentationName="Gather Requirements" name="Gather Requirements" usedTool="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.4/@ownedMethodContentMember.5/@ownedMethodContentMember.54">
+          <ownedTaskDefinitionParameter name="Requirements Structure" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.0"/>
+          <ownedTaskDefinitionParameter direction="out" name="Requirement Model" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.2"/>
+        </ownedMethodContentMember>
+        <ownedMethodContentMember xsi:type="spem:TaskDefinition" presentationName="Automatic Review Requirements" name="Automatic Review Requirements" usedTool="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.4/@ownedMethodContentMember.5/@ownedMethodContentMember.43">
+          <ownedTaskDefinitionParameter name="Requirements Model" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.2"/>
+          <ownedTaskDefinitionParameter name="Requirements Rule Set" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.1"/>
+          <ownedTaskDefinitionParameter direction="out" name="Verdict Automatic Review" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.3"/>
+          <ownedTaskDefinitionParameter direction="out" name="Requirements Automatic Analysis Report" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.5"/>
+        </ownedMethodContentMember>
+        <ownedMethodContentMember xsi:type="spem:TaskDefinition" presentationName="Manual Review Requirements" name="Manual Review Requirements">
+          <ownedTaskDefinitionParameter name="Requirements Model" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.2"/>
+          <ownedTaskDefinitionParameter direction="out" name="Verdict Manual Review" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.4"/>
+        </ownedMethodContentMember>
+        <ownedMethodContentMember xsi:type="spem:TaskDefinition" presentationName="Evaluate Requirements Analysis Report" name="Evaluate Requirements Analysis Report" usedTool="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.4/@ownedMethodContentMember.5/@ownedMethodContentMember.43">
+          <ownedTaskDefinitionParameter name="Verdict Automatic Review" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.3"/>
+          <ownedTaskDefinitionParameter name="Requirements Automatic Analysis Report" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.5"/>
+          <ownedTaskDefinitionParameter name="Verdict Manual Review" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.4"/>
+          <ownedTaskDefinitionParameter direction="out" name="Verdict Requirements Review" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.6"/>
+        </ownedMethodContentMember>
+        <ownedMethodContentMember xsi:type="spem:Default_TaskDefinitionPerformer" linkedTaskDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.3" linkedRoleDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.1"/>
+        <ownedMethodContentMember xsi:type="spem:Default_TaskDefinitionPerformer" linkedTaskDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.4" linkedRoleDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.1"/>
+        <ownedMethodContentMember xsi:type="spem:Default_TaskDefinitionPerformer" linkedTaskDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.5" linkedRoleDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.1"/>
+        <ownedMethodContentMember xsi:type="spem:TaskDefinition" presentationName="Model Functional Components" name="Model Functional Components" usedTool="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.4/@ownedMethodContentMember.5/@ownedMethodContentMember.34">
+          <ownedTaskDefinitionParameter name="Requirement Model" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.2"/>
+          <ownedTaskDefinitionParameter name="Model Library" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.7"/>
+          <ownedTaskDefinitionParameter direction="out" name="System Architecture Model" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.8"/>
+        </ownedMethodContentMember>
+        <ownedMethodContentMember xsi:type="spem:Default_TaskDefinitionPerformer" linkedTaskDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.9" linkedRoleDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.3"/>
+        <ownedMethodContentMember xsi:type="spem:TaskDefinition" presentationName="Create Trace Links between Requirements and System Architecture Model" name="Create Trace Links between Requirements and System Architecture Model" usedTool="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.4/@ownedMethodContentMember.5/@ownedMethodContentMember.55">
+          <ownedTaskDefinitionParameter name="Requirements Model" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.2"/>
+          <ownedTaskDefinitionParameter name="System Architecture Model" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.8"/>
+          <ownedTaskDefinitionParameter direction="out" name="Trace Model - Architecture Level" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.9"/>
+        </ownedMethodContentMember>
+        <ownedMethodContentMember xsi:type="spem:Default_TaskDefinitionPerformer" linkedTaskDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.11" linkedRoleDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.3"/>
+        <ownedMethodContentMember xsi:type="spem:TaskDefinition" presentationName="Model Hardware" name="Model Hardware">
+          <ownedTaskDefinitionParameter parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.10"/>
+          <ownedTaskDefinitionParameter direction="out" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.11"/>
+        </ownedMethodContentMember>
+        <ownedMethodContentMember xsi:type="spem:TaskDefinition" presentationName="Analyse System Model" name="Analyse System Model" usedTool="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.4/@ownedMethodContentMember.5/@ownedMethodContentMember.43 //@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.4/@ownedMethodContentMember.5/@ownedMethodContentMember.56">
+          <ownedTaskDefinitionParameter name="System Architecture Model" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.8"/>
+          <ownedTaskDefinitionParameter name="Requirements Model" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.2"/>
+          <ownedTaskDefinitionParameter name="Trace Model - Architecture Level" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.9"/>
+          <ownedTaskDefinitionParameter parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.12"/>
+          <ownedTaskDefinitionParameter direction="out" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.13"/>
+          <ownedTaskDefinitionParameter direction="out" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.14"/>
+        </ownedMethodContentMember>
+        <ownedMethodContentMember xsi:type="spem:TaskDefinition" presentationName="Evaluate System Analysis Report" name="Evaluate System Analysis Report" usedTool="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.4/@ownedMethodContentMember.5/@ownedMethodContentMember.43">
+          <ownedTaskDefinitionParameter name="System Analysis Report" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.14"/>
+        </ownedMethodContentMember>
+        <ownedMethodContentMember xsi:type="spem:Default_TaskDefinitionPerformer" linkedTaskDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.14" linkedRoleDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.1"/>
+        <ownedMethodContentMember xsi:type="spem:TaskDefinition" name="Reverse Engineering" usedTool="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.4/@ownedMethodContentMember.5/@ownedMethodContentMember.41">
+          <ownedTaskDefinitionParameter parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.15"/>
+          <ownedTaskDefinitionParameter direction="out" name="Model Library" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.7"/>
+        </ownedMethodContentMember>
+        <ownedMethodContentMember xsi:type="spem:TaskDefinition" presentationName="Create Detailed Structure" name="Create Detailed Structure" usedTool="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.4/@ownedMethodContentMember.5/@ownedMethodContentMember.34">
+          <ownedTaskDefinitionParameter name="Requirements Model" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.2"/>
+          <ownedTaskDefinitionParameter name="System Architecture Model" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.8"/>
+          <ownedTaskDefinitionParameter name="Model Library" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.7"/>
+          <ownedTaskDefinitionParameter direction="out" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.16"/>
+        </ownedMethodContentMember>
+        <ownedMethodContentMember xsi:type="spem:Default_TaskDefinitionPerformer" linkedTaskDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.18" linkedRoleDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.6"/>
+        <ownedMethodContentMember xsi:type="spem:TaskDefinition" presentationName="Create Detailed Behavior CDT" name="Create Detailed Behavior CDT" usedTool="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.4/@ownedMethodContentMember.5/@ownedMethodContentMember.6">
+          <ownedTaskDefinitionParameter name="Detailed Structural Model" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.16"/>
+          <ownedTaskDefinitionParameter direction="out" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.17"/>
+        </ownedMethodContentMember>
+        <ownedMethodContentMember xsi:type="spem:TaskDefinition" presentationName="Create Detailed Behavior Statecharts" name="Create Detailed Behavior Statecharts" usedTool="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.4/@ownedMethodContentMember.5/@ownedMethodContentMember.38">
+          <ownedTaskDefinitionParameter name="Detailed Structural Model" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.16"/>
+          <ownedTaskDefinitionParameter parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.18"/>
+        </ownedMethodContentMember>
+        <ownedMethodContentMember xsi:type="spem:TaskDefinition" presentationName="Create Detailed Behavior Simulink" name="Create Detailed Behavior Simulink" usedTool="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.4/@ownedMethodContentMember.5/@ownedMethodContentMember.57">
+          <ownedTaskDefinitionParameter name="Detailed Structural Model" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.16"/>
+          <ownedTaskDefinitionParameter parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.19"/>
+        </ownedMethodContentMember>
+        <ownedMethodContentMember xsi:type="spem:Default_TaskDefinitionPerformer" linkedTaskDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.20" linkedRoleDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.6"/>
+        <ownedMethodContentMember xsi:type="spem:TaskDefinition" presentationName="Extending Tracing Model" name="Extending Tracing Model">
+          <ownedTaskDefinitionParameter name="Requirements Model" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.2"/>
+          <ownedTaskDefinitionParameter name="Trace Model - Architecture Level" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.9"/>
+          <ownedTaskDefinitionParameter parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.20"/>
+          <ownedTaskDefinitionParameter direction="out" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.21"/>
+        </ownedMethodContentMember>
+        <ownedMethodContentMember xsi:type="spem:TaskDefinition" presentationName="Deployment and Configuration Modeling" name="Deployment and Configuration Modeling">
+          <ownedTaskDefinitionParameter name="Detailed Structural Model" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.16"/>
+          <ownedTaskDefinitionParameter name="Hardware Model Library" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.11"/>
+          <ownedTaskDefinitionParameter direction="out" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.22"/>
+        </ownedMethodContentMember>
+        <ownedMethodContentMember xsi:type="spem:TaskDefinition" presentationName="Analyse Detailed Models" name="Analyse Detailed Models" usedTool="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.4/@ownedMethodContentMember.5/@ownedMethodContentMember.56">
+          <ownedTaskDefinitionParameter parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.23"/>
+          <ownedTaskDefinitionParameter parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.24"/>
+          <ownedTaskDefinitionParameter parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.25"/>
+          <ownedTaskDefinitionParameter parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.26"/>
+          <ownedTaskDefinitionParameter parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.27"/>
+          <ownedTaskDefinitionParameter direction="out" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.28"/>
+          <ownedTaskDefinitionParameter direction="out" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.29"/>
+        </ownedMethodContentMember>
+        <ownedMethodContentMember xsi:type="spem:TaskDefinition" presentationName="Evaluate Detailed System Analysis Report&#xD;&#xA;" name="Evaluate Detailed System Analysis Report" usedTool="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.4/@ownedMethodContentMember.5/@ownedMethodContentMember.43">
+          <ownedTaskDefinitionParameter name="Detailed System Analysis Report" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.29"/>
+        </ownedMethodContentMember>
+        <ownedMethodContentMember xsi:type="spem:Default_TaskDefinitionPerformer" linkedTaskDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.27" linkedRoleDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.1"/>
+        <ownedMethodContentMember xsi:type="spem:TaskDefinition" presentationName="Generate Functional Software" name="Generate Functional Software" usedTool="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.4/@ownedMethodContentMember.5/@ownedMethodContentMember.38 //@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.4/@ownedMethodContentMember.5/@ownedMethodContentMember.57">
+          <ownedTaskDefinitionParameter direction="out" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.30"/>
+          <ownedTaskDefinitionParameter parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.31"/>
+          <ownedTaskDefinitionParameter parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.32"/>
+          <ownedTaskDefinitionParameter name="Detailed Model" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.20"/>
+        </ownedMethodContentMember>
+        <ownedMethodContentMember xsi:type="spem:Default_TaskDefinitionPerformer" linkedTaskDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.29" linkedRoleDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.3"/>
+        <ownedMethodContentMember xsi:type="spem:TaskDefinition" presentationName="Generate Test Cases" name="Generate Test Cases" usedTool="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.4/@ownedMethodContentMember.5/@ownedMethodContentMember.45">
+          <ownedTaskDefinitionParameter direction="out" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.33"/>
+          <ownedTaskDefinitionParameter name="Detailed Model" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.20"/>
+          <ownedTaskDefinitionParameter name="System Architecture Model" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.8"/>
+        </ownedMethodContentMember>
+        <ownedMethodContentMember xsi:type="spem:Default_TaskDefinitionPerformer" linkedTaskDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.31" linkedRoleDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.7"/>
+        <ownedMethodContentMember xsi:type="spem:TaskDefinition" presentationName="Add and Refine Test Cases" name="Add and Refine Test Cases" usedTool="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.4/@ownedMethodContentMember.5/@ownedMethodContentMember.45">
+          <ownedTaskDefinitionParameter name="Initial Test Model" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.33"/>
+          <ownedTaskDefinitionParameter name="Requirement Model" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.25"/>
+          <ownedTaskDefinitionParameter direction="out" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.35"/>
+        </ownedMethodContentMember>
+        <ownedMethodContentMember xsi:type="spem:TaskDefinition" presentationName="Generate Test Data" name="Generate Test Data" usedTool="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.4/@ownedMethodContentMember.5/@ownedMethodContentMember.45">
+          <ownedTaskDefinitionParameter direction="out" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.34"/>
+          <ownedTaskDefinitionParameter name="Refined Test Model" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.35"/>
+        </ownedMethodContentMember>
+        <ownedMethodContentMember xsi:type="spem:Default_TaskDefinitionPerformer" linkedTaskDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.34" linkedRoleDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.7"/>
+        <ownedMethodContentMember xsi:type="spem:TaskDefinition" presentationName="Generate Test Code" name="Generate Test Code" usedTool="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.4/@ownedMethodContentMember.5/@ownedMethodContentMember.45">
+          <ownedTaskDefinitionParameter name="Complete Test Model" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.34"/>
+          <ownedTaskDefinitionParameter direction="out" parameterType="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.36"/>
+        </ownedMethodContentMember>
+        <ownedMethodContentMember xsi:type="spem:Default_TaskDefinitionPerformer" linkedTaskDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.36" linkedRoleDefinition="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.7"/>
+      </ownedMethodContentMember>
+      <ownedMethodContentMember xsi:type="uma:WorkProductDefinitionPackage" name="Work Products">
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" name="Requirements Structure"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" name="Requirements Rule Set"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" purpose="" name="Requirements Model"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" name="Verdict Automatic Review"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" name="Verdict Manual Review"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" name="Requirements Automatic Analysis Report"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" name="Verdict Requirements Review"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" name="Model Library"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" name="System Architecture Model"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" name="Trace Model - Architecture Level"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="Informal Hardware Description" name="Informal Hardware Description"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="Hardware Model Library" name="Hardware Model Library"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="Rule Set High Level Design" name="Rule Set High Level Design"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="Verdict System Model" name="Verdict System Model"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="System Analysis Report" name="System Analysis Report"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="Existing Description: System C" name="Existing Description: System C"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="Detailed Structural Model" name="Detailed Structural Model"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="Code: SystemC" name="Code: SystemC"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="Statechart: Yakindu" name="Statechart: Yakindu"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="Simulin: Simulink" name="Simulin: Simulink"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="Detailed Model" name="Detailed Model"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="Trace Model Detailed Level" name="Trace Model Detailed Level"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="Deployment and Configuration Model" name="Deployment and Configuration Model"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="System Deployment Model" name="System Deployment Model"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="System Detailed Design Model" name="System Detailed Design Model"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="Requirement Model" name="Requirement Model"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="Trace Model Detailed Level" name="Trace Model Detailed Level"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="Rule Set Detailed Level Design" name="Rule Set Detailed Level Design"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="Verdict Detailed System Model" name="Verdict Detailed System Model"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="Detailed System Analysis Report" name="Detailed System Analysis Report"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="SystemC Code" name="SystemC Code"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="Simulink Model" name="Simulink Model"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="Yakindu Statechart" name="Yakindu Statechart"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="Initial Test Model" name="Initial Test Model"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="Complete Test Model" name="Complete Test Model"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="Refined Test Model" name="Refined Test Model"/>
+        <ownedMethodContentMember xsi:type="spem:WorkProductDefinition" presentationName="Test Suite" name="Test Suite"/>
+      </ownedMethodContentMember>
+      <ownedMethodContentMember xsi:type="uma:GuidancePackage" name="Guidances"/>
+      <ownedMethodContentMember xsi:type="uma:CategoryPackage" name="Standard Categories">
+        <ownedMethodContentMember xsi:type="uma:DisciplinePackage" name="Disciplines"/>
+        <ownedMethodContentMember xsi:type="uma:DomainPackage" name="Domains"/>
+        <ownedMethodContentMember xsi:type="uma:WorkProductKindPackage" name="Work Product Kinds"/>
+        <ownedMethodContentMember xsi:type="uma:QualificationPackage" name="Qualifications"/>
+        <ownedMethodContentMember xsi:type="uma:RoleSetPackage" name="Role Sets"/>
+        <ownedMethodContentMember xsi:type="uma:ToolDefinitionPackage" name="Tools">
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="Eclipse Platform"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="CVS Client"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="SVN"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="SVN Connectors"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="Mylyn"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="JDT"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="CDT"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="PDE"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="WST-XML"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="DSDP"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="OSEE"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="EMF"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="CDO"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="Model Query"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="Model Transaction"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="EMF Validation"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="Net4j"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="SDO"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="Teneo"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="Ecore Tools"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="Mint"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="MWE"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="EMF Compare"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="Draw2D"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="GEF"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="GMF"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="ATL"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="QVTO"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="Acceleo"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="JET"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="Xpand"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="XSD"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="OCL"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="XText"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="Papyrus"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="UML2"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="Zest"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="OAW"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="Yakindu"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="Graphviz"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="Oslo"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="Obeo Agility"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="Obeo Designer"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="Metrino"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="Model Bus"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="FOKUS!MBT"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="Smartesting Test Designer "/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="eclox"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="System Modeling Toolkit (SMT)"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="System Analysis Toolkit (SAT)"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="eC3M"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="medini QVT"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" presentationName="MyCCM" briefDescription="" mainDescription="MyCCM will be used to generate code from LwCCM models." purpose="Transformation" name="MyCCM">
+            <author>[Thales]</author>
+          </ownedMethodContentMember>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" presentationName="CVL Tools" briefDescription="CVL Tool supports the Common Variability Language." mainDescription="CVL Tool supports the Common Variability Language. This version covers the version that was pioneered by the MoSiS ITEA project. CVL Tool can work with any other tool supporting a modeling language described by a metamodel defined in eCore. CVL defines how a copy of a base description should be transformed to form a specific product. CVL includes feature models as part of the language." purpose="Modeling" version="1.2.1" name="CVLTool">
+            <author>[SINTEF]</author>
+          </ownedMethodContentMember>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="ProR"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="Requirement Editor"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="Tracing Tool Kit"/>
+          <ownedMethodContentMember xsi:type="spem:ToolDefinition" name="Simulink"/>
+        </ownedMethodContentMember>
+      </ownedMethodContentMember>
+      <ownedMethodContentMember xsi:type="uma:CategoryPackage" name="Custom Categories"/>
+    </ownedMethodContentPackage>
+    <ownedProcessPackage name="Processes">
+      <ownedProcessMember xsi:type="uma:CapabilityPatternPackage" name="Capability Patterns">
+        <ownedProcessMember xsi:type="uma:CapabilityPattern" presentationName="Automotive" name="Automotive">
+          <nestedBreakdownElement xsi:type="activity:StartNode"/>
+          <nestedBreakdownElement xsi:type="activity:EndNode"/>
+          <nestedBreakdownElement xsi:type="spem:Activity" briefDescription="In this activity the requirements structure is defined." name="Requirements configuration">
+            <preCondition>Requirements</preCondition>
+            <preCondition>Engineer</preCondition>
+            <preCondition>Knowledge,</preCondition>
+            <preCondition>Quality</preCondition>
+            <preCondition>Manager</preCondition>
+            <preCondition>Knowledge</preCondition>
+            <postCondition>Requirements</postCondition>
+            <postCondition>Structure,</postCondition>
+            <postCondition>Rule</postCondition>
+            <postCondition>Set</postCondition>
+            <nestedBreakdownElement xsi:type="spem:TaskUse" name="Define Requirements Structure" task="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.0">
+              <ownedProcessParameter direction="out" name="Requirements Structure" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.2/@nestedBreakdownElement.3"/>
+            </nestedBreakdownElement>
+            <nestedBreakdownElement xsi:type="spem:RoleUse" name="Requirements Engineer" role="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.0"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.2/@nestedBreakdownElement.1" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.2/@nestedBreakdownElement.0"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Requirements Structure" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.0"/>
+            <nestedBreakdownElement xsi:type="spem:TaskUse" name="Define Requirements Rules Set" task="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.1">
+              <ownedProcessParameter name="Requirements Structure" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.2/@nestedBreakdownElement.3"/>
+              <ownedProcessParameter direction="out" name="Requirements Rule Set" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.2/@nestedBreakdownElement.8"/>
+            </nestedBreakdownElement>
+            <nestedBreakdownElement xsi:type="spem:RoleUse" name="Quality Manager" role="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.1"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.2/@nestedBreakdownElement.5" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.2/@nestedBreakdownElement.4"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.2/@nestedBreakdownElement.1" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.2/@nestedBreakdownElement.4"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Requirements Rule Set" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.1"/>
+            <nestedBreakdownElement xsi:type="activity:StartNode"/>
+            <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.2/@nestedBreakdownElement.9" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.2/@nestedBreakdownElement.0"/>
+            <nestedBreakdownElement xsi:type="activity:EndNode"/>
+            <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.2/@nestedBreakdownElement.0" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.2/@nestedBreakdownElement.4"/>
+            <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.2/@nestedBreakdownElement.4" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.2/@nestedBreakdownElement.11"/>
+          </nestedBreakdownElement>
+          <nestedBreakdownElement xsi:type="spem:Activity" briefDescription="In this activity the requirements are gathered." name="Requirements engineering">
+            <preCondition>End</preCondition>
+            <preCondition>Users</preCondition>
+            <preCondition>Knowledge,</preCondition>
+            <preCondition>Requirements</preCondition>
+            <preCondition>Structure</preCondition>
+            <postCondition>Requirements</postCondition>
+            <postCondition>Model</postCondition>
+            <postCondition>(example:</postCondition>
+            <postCondition>please</postCondition>
+            <postCondition>provide</postCondition>
+            <postCondition>a</postCondition>
+            <postCondition>link</postCondition>
+            <postCondition>to</postCondition>
+            <postCondition>an</postCondition>
+            <postCondition>example</postCondition>
+            <postCondition>model</postCondition>
+            <postCondition>in</postCondition>
+            <postCondition>subversion)</postCondition>
+            <nestedBreakdownElement xsi:type="spem:TaskUse" name="Gather Requirements" task="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.2">
+              <ownedProcessParameter name="Requirements Structure" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.3/@nestedBreakdownElement.5"/>
+              <ownedProcessParameter direction="out" name="Requirement Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.3/@nestedBreakdownElement.6"/>
+            </nestedBreakdownElement>
+            <nestedBreakdownElement xsi:type="spem:RoleUse" name="End User" role="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.2"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.3/@nestedBreakdownElement.1" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.3/@nestedBreakdownElement.0"/>
+            <nestedBreakdownElement xsi:type="spem:RoleUse" name="Requirements Engineer" role="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.0"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.3/@nestedBreakdownElement.3" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.3/@nestedBreakdownElement.0"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Requirements Structure" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.0"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Requirements Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.2"/>
+          </nestedBreakdownElement>
+          <nestedBreakdownElement xsi:type="spem:Activity" briefDescription="The gather requirements are checked against certain rule sets and can be measured accoriding to a given metrics set" name="Analyse Requirements Model">
+            <preCondition>Requirements</preCondition>
+            <preCondition>Model,</preCondition>
+            <preCondition>Rule</preCondition>
+            <preCondition>Set</preCondition>
+            <postCondition>Verdict,</postCondition>
+            <postCondition>Report</postCondition>
+            <postCondition>(example:</postCondition>
+            <postCondition>please</postCondition>
+            <postCondition>provide</postCondition>
+            <postCondition>a</postCondition>
+            <postCondition>link</postCondition>
+            <postCondition>to</postCondition>
+            <postCondition>an</postCondition>
+            <postCondition>example</postCondition>
+            <postCondition>model</postCondition>
+            <postCondition>in</postCondition>
+            <postCondition>subversion)</postCondition>
+            <nestedBreakdownElement xsi:type="spem:TaskUse" name="Automatic Review Requirements" task="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.3">
+              <ownedProcessParameter name="Requirements Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.4/@nestedBreakdownElement.3"/>
+              <ownedProcessParameter name="Requirements Rule Set" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.4/@nestedBreakdownElement.4"/>
+              <ownedProcessParameter direction="out" name="Verdict Automatic Review" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.4/@nestedBreakdownElement.5"/>
+              <ownedProcessParameter direction="out" name="Requirements Automatic Analysis Report" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.4/@nestedBreakdownElement.6"/>
+            </nestedBreakdownElement>
+            <nestedBreakdownElement xsi:type="spem:RoleUse" name="Quality Manager" role="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.1"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.4/@nestedBreakdownElement.1" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.4/@nestedBreakdownElement.0"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Requirements Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.2"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Requirements Rule Set" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.1"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Verdict Automatic Review" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.3"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Requirements Automatic Analysis Report1" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.5"/>
+            <nestedBreakdownElement xsi:type="spem:TaskUse" name="Manual Review Requirements" task="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.4">
+              <ownedProcessParameter name="Requirements Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.4/@nestedBreakdownElement.3"/>
+              <ownedProcessParameter direction="out" name="Verdict Manual Review" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.4/@nestedBreakdownElement.9"/>
+            </nestedBreakdownElement>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.4/@nestedBreakdownElement.1" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.4/@nestedBreakdownElement.7"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Verdict Manual Review" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.4"/>
+            <nestedBreakdownElement xsi:type="spem:TaskUse" name="Evaluate Requirements Analysis Report" task="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.5">
+              <ownedProcessParameter name="Verdict Automatic Review" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.4/@nestedBreakdownElement.5"/>
+              <ownedProcessParameter name="Requirements Automatic Analysis Report" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.4/@nestedBreakdownElement.6"/>
+              <ownedProcessParameter name="Verdict Manual Review" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.4/@nestedBreakdownElement.9"/>
+              <ownedProcessParameter direction="out" name="Verdict Requirements Review" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.4/@nestedBreakdownElement.12"/>
+            </nestedBreakdownElement>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.4/@nestedBreakdownElement.1" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.4/@nestedBreakdownElement.10"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Verdict Requirements Review" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.6"/>
+          </nestedBreakdownElement>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.0" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.2"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.2" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.3"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.3" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.4"/>
+          <nestedBreakdownElement xsi:type="activity:DecisionNode" name="Verdict?"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.4" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.8"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.8" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.3"/>
+          <nestedBreakdownElement xsi:type="activity:ForkNode"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.8" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.11"/>
+          <nestedBreakdownElement xsi:type="spem:Activity" briefDescription="System Architecture is modeled." name="System Architecture Modeling">
+            <nestedBreakdownElement xsi:type="spem:TaskUse" name="Model Functional Components" task="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.9">
+              <ownedProcessParameter name="Requirement Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.13/@nestedBreakdownElement.3"/>
+              <ownedProcessParameter name="Model Library" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.13/@nestedBreakdownElement.4"/>
+              <ownedProcessParameter direction="out" name="System Architecture Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.13/@nestedBreakdownElement.5"/>
+            </nestedBreakdownElement>
+            <nestedBreakdownElement xsi:type="spem:RoleUse" name="System Architect" role="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.3"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.13/@nestedBreakdownElement.1" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.13/@nestedBreakdownElement.0"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Requirements Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.2"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Model Library" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.7"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="System Architecture Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.8"/>
+          </nestedBreakdownElement>
+          <nestedBreakdownElement xsi:type="activity:JoinNode"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.11" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.13"/>
+          <nestedBreakdownElement xsi:type="spem:Activity" briefDescription="Create Trace Links between Requirements and System Architecture Model." name="Requirements Tracing High Level">
+            <nestedBreakdownElement xsi:type="spem:TaskUse" name="Create Trace Links between Requirements and System Architecture Model" task="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.11">
+              <ownedProcessParameter name="Requirements Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.16/@nestedBreakdownElement.3"/>
+              <ownedProcessParameter name="System Architecture Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.16/@nestedBreakdownElement.4"/>
+              <ownedProcessParameter direction="out" name="Trace Model - Architecture Level" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.16/@nestedBreakdownElement.5"/>
+            </nestedBreakdownElement>
+            <nestedBreakdownElement xsi:type="spem:RoleUse" name="System Architect" role="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.3"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.16/@nestedBreakdownElement.1" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.16/@nestedBreakdownElement.0"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Requirements Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.2"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="System Architecture Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.8"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Trace Model - Architecture Level" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.9"/>
+          </nestedBreakdownElement>
+          <nestedBreakdownElement xsi:type="spem:Activity" name="Hardware Modeling">
+            <nestedBreakdownElement xsi:type="spem:TaskUse" name="Model Hardware" task="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.13">
+              <ownedProcessParameter name="Informal Hardware Description" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.17/@nestedBreakdownElement.5"/>
+              <ownedProcessParameter direction="out" name="Hardware Model Library" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.17/@nestedBreakdownElement.6"/>
+            </nestedBreakdownElement>
+            <nestedBreakdownElement xsi:type="spem:RoleUse" name="Modeling Expert" role="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.4"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.17/@nestedBreakdownElement.1" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.17/@nestedBreakdownElement.0"/>
+            <nestedBreakdownElement xsi:type="spem:RoleUse" name="Hardware Expert" role="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.5"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.17/@nestedBreakdownElement.3" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.17/@nestedBreakdownElement.0"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Informal Hardware Description" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.10"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Hardware Model Library" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.11"/>
+          </nestedBreakdownElement>
+          <nestedBreakdownElement xsi:type="spem:Activity" name="Test Bench Modeling"/>
+          <nestedBreakdownElement xsi:type="spem:Activity" name="Model Analysis High Level Design ">
+            <nestedBreakdownElement xsi:type="spem:TaskUse" name="Analyse System Model" task="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.14">
+              <ownedProcessParameter name="System Architecture Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.19/@nestedBreakdownElement.5"/>
+              <ownedProcessParameter name="Requirements Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.19/@nestedBreakdownElement.6"/>
+              <ownedProcessParameter name="Trace Model - Architecture Level" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.19/@nestedBreakdownElement.7"/>
+              <ownedProcessParameter name="Rule Set High Level Design" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.19/@nestedBreakdownElement.8"/>
+              <ownedProcessParameter direction="out" name="Verdict System Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.19/@nestedBreakdownElement.9"/>
+              <ownedProcessParameter direction="out" name="System Analysis Report" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.19/@nestedBreakdownElement.10"/>
+            </nestedBreakdownElement>
+            <nestedBreakdownElement xsi:type="spem:TaskUse" name="Evaluate System Analysis Report" task="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.15">
+              <ownedProcessParameter name="System Analysis Report" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.19/@nestedBreakdownElement.10"/>
+            </nestedBreakdownElement>
+            <nestedBreakdownElement xsi:type="spem:RoleUse" name="Quality Manager" role="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.1"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.19/@nestedBreakdownElement.2" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.19/@nestedBreakdownElement.0"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.19/@nestedBreakdownElement.2" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.19/@nestedBreakdownElement.1"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="System Architecture Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.8"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Requirements Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.2"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Trace Model - Architecture Level" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.9"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Rule Set High Level Design" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.12"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Verdict System Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.13"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="System Analysis Report" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.14"/>
+          </nestedBreakdownElement>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.11" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.16"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.11" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.17"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.11" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.18"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.13" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.14"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.16" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.14"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.17" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.14"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.18" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.14"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.14" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.19"/>
+          <nestedBreakdownElement xsi:type="activity:DecisionNode" name="Verdict?"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.19" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.28"/>
+          <nestedBreakdownElement xsi:type="activity:ForkNode"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.28" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.30"/>
+          <nestedBreakdownElement xsi:type="spem:Activity" briefDescription="Reverse Engineerin" name="Reverse Engineering " isOptional="true">
+            <nestedBreakdownElement xsi:type="spem:TaskUse" task="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.17">
+              <ownedProcessParameter name="Existing Description: System C1" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.32/@nestedBreakdownElement.1"/>
+              <ownedProcessParameter direction="out" name="Model Library" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.32/@nestedBreakdownElement.2"/>
+            </nestedBreakdownElement>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Existing Description: System C" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.15"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Model Library" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.7"/>
+          </nestedBreakdownElement>
+          <nestedBreakdownElement xsi:type="spem:Activity" name="Detailed Design">
+            <nestedBreakdownElement xsi:type="spem:TaskUse" name="Create Detailed Structure" task="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.18">
+              <ownedProcessParameter name="Requirements Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.33/@nestedBreakdownElement.3"/>
+              <ownedProcessParameter name="System Architecture Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.33/@nestedBreakdownElement.4"/>
+              <ownedProcessParameter name="Model Library" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.33/@nestedBreakdownElement.5"/>
+              <ownedProcessParameter direction="out" name="Detailed Structural Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.33/@nestedBreakdownElement.6"/>
+            </nestedBreakdownElement>
+            <nestedBreakdownElement xsi:type="spem:RoleUse" name="Detailled Designer" role="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.6"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.33/@nestedBreakdownElement.1" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.33/@nestedBreakdownElement.0"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Requirements Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.2"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="System Architecture Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.8"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Model Library" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.7"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Detailed Structural Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.16"/>
+          </nestedBreakdownElement>
+          <nestedBreakdownElement xsi:type="spem:Activity" name="Behaviour Modeling">
+            <nestedBreakdownElement xsi:type="spem:TaskUse" name="Create Detailed Behavior CDT" task="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.20">
+              <ownedProcessParameter name="Detailed Structural Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.34/@nestedBreakdownElement.7"/>
+              <ownedProcessParameter direction="out" name="Code: SystemC" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.34/@nestedBreakdownElement.8"/>
+            </nestedBreakdownElement>
+            <nestedBreakdownElement xsi:type="spem:TaskUse" name="Create Detailed Behavior Statecharts" task="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.21">
+              <ownedProcessParameter name="Detailed Structural Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.34/@nestedBreakdownElement.7"/>
+              <ownedProcessParameter name="Statechart: Yakindu" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.34/@nestedBreakdownElement.9"/>
+            </nestedBreakdownElement>
+            <nestedBreakdownElement xsi:type="spem:TaskUse" name="Create Detailed Behavior Simulink" task="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.22">
+              <ownedProcessParameter name="Detailed Structural Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.34/@nestedBreakdownElement.7"/>
+              <ownedProcessParameter name="Simulin: Simulink" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.34/@nestedBreakdownElement.10"/>
+            </nestedBreakdownElement>
+            <nestedBreakdownElement xsi:type="spem:RoleUse" name="Detailled Designer" role="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.6"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.34/@nestedBreakdownElement.3" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.34/@nestedBreakdownElement.0"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.34/@nestedBreakdownElement.3" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.34/@nestedBreakdownElement.1"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.34/@nestedBreakdownElement.3" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.34/@nestedBreakdownElement.2"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Detailed Structural Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.16"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Code: SystemC" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.17"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Statechart: Yakindu" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.18"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Simulin: Simulink" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.19"/>
+          </nestedBreakdownElement>
+          <nestedBreakdownElement xsi:type="spem:Activity" name="Test Case Derivation">
+            <nestedBreakdownElement xsi:type="spem:TaskUse" name="Generate Test Cases" task="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.31">
+              <ownedProcessParameter direction="out" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.35/@nestedBreakdownElement.1"/>
+              <ownedProcessParameter name="Detailed Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.35/@nestedBreakdownElement.2"/>
+              <ownedProcessParameter name="System Architecture Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.35/@nestedBreakdownElement.3"/>
+            </nestedBreakdownElement>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Initial Test Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.33"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Detailed Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.20"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="System Architecture Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.8"/>
+            <nestedBreakdownElement xsi:type="spem:RoleUse" name="Test Engineer" role="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.7"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.35/@nestedBreakdownElement.4" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.35/@nestedBreakdownElement.0"/>
+          </nestedBreakdownElement>
+          <nestedBreakdownElement xsi:type="spem:Activity" name="Test Modeling">
+            <nestedBreakdownElement xsi:type="spem:TaskUse" name="Add and Refine Test Cases" task="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.33">
+              <ownedProcessParameter name="Initial Test Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.36/@nestedBreakdownElement.6"/>
+              <ownedProcessParameter name="Requirement Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.36/@nestedBreakdownElement.7"/>
+              <ownedProcessParameter direction="out"/>
+            </nestedBreakdownElement>
+            <nestedBreakdownElement xsi:type="spem:TaskUse" name="Generate Test Data" task="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.34">
+              <ownedProcessParameter direction="out"/>
+              <ownedProcessParameter name="Refined Test Model"/>
+            </nestedBreakdownElement>
+            <nestedBreakdownElement xsi:type="spem:RoleUse" name="Test Engineer" role="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.7"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.36/@nestedBreakdownElement.2" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.36/@nestedBreakdownElement.1"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.36/@nestedBreakdownElement.2" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.36/@nestedBreakdownElement.0"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Complete Test Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.34"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Initial Test Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.33"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Requirement Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.25"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Refined Test Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.35"/>
+          </nestedBreakdownElement>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.30" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.32"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.30" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.33"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.30" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.34"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.30" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.35"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.35" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.36"/>
+          <nestedBreakdownElement xsi:type="activity:JoinNode"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.36" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.42"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.34" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.42"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.33" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.42"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.32" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.42"/>
+          <nestedBreakdownElement xsi:type="activity:DecisionNode" name="Iterate?"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.42" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.47"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.47" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.30"/>
+          <nestedBreakdownElement xsi:type="activity:ForkNode"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.47" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.50"/>
+          <nestedBreakdownElement xsi:type="spem:Activity" name="Requirements Tracing Detailed Design">
+            <nestedBreakdownElement xsi:type="spem:TaskUse" name="Extending Tracing Model" task="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.24">
+              <ownedProcessParameter name="Requirements Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.52/@nestedBreakdownElement.1"/>
+              <ownedProcessParameter name="Trace Model - Architecture Level" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.52/@nestedBreakdownElement.2"/>
+              <ownedProcessParameter name="Trace Model Detailed Level" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.52/@nestedBreakdownElement.8"/>
+              <ownedProcessParameter direction="out" name="Detailed Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.52/@nestedBreakdownElement.3"/>
+            </nestedBreakdownElement>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Requirements Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.2"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Trace Model - Architecture Level" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.9"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Detailed Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.20"/>
+            <nestedBreakdownElement xsi:type="spem:RoleUse" name="Requirements Engineer" role="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.0"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.52/@nestedBreakdownElement.4" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.52/@nestedBreakdownElement.0"/>
+            <nestedBreakdownElement xsi:type="spem:RoleUse" name="Detailled Designer" role="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.6"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.52/@nestedBreakdownElement.6" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.52/@nestedBreakdownElement.0"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Trace Model Detailed Level" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.21"/>
+          </nestedBreakdownElement>
+          <nestedBreakdownElement xsi:type="spem:Activity" name="Deployment and Configuration Modeling">
+            <nestedBreakdownElement xsi:type="spem:TaskUse" name="Deployment and Configuration " task="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.25">
+              <ownedProcessParameter name="Detailed Structural Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.53/@nestedBreakdownElement.1"/>
+              <ownedProcessParameter name="Hardware Model Library" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.53/@nestedBreakdownElement.2"/>
+              <ownedProcessParameter direction="out" name="Deployment and Configuration Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.53/@nestedBreakdownElement.7"/>
+            </nestedBreakdownElement>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Detailed Structural Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.16"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Hardware Model Library" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.11"/>
+            <nestedBreakdownElement xsi:type="spem:RoleUse" name="Detailled Designer" role="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.6"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.53/@nestedBreakdownElement.3" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.53/@nestedBreakdownElement.0"/>
+            <nestedBreakdownElement xsi:type="spem:RoleUse" name="Hardware Expert" role="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.5"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.53/@nestedBreakdownElement.5" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.53/@nestedBreakdownElement.0"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Deployment and Configuration Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.22"/>
+          </nestedBreakdownElement>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.50" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.53"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.50" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.52"/>
+          <nestedBreakdownElement xsi:type="activity:JoinNode"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.53" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.56"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.52" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.56"/>
+          <nestedBreakdownElement xsi:type="spem:Activity" name="Model Analysis Detailed Design">
+            <nestedBreakdownElement xsi:type="spem:TaskUse" name="Analyse Detailed Models" task="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.26">
+              <ownedProcessParameter name="System Deployment Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.59/@nestedBreakdownElement.5"/>
+              <ownedProcessParameter name="System Detailed Design Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.59/@nestedBreakdownElement.6"/>
+              <ownedProcessParameter name="Requirement Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.59/@nestedBreakdownElement.7"/>
+              <ownedProcessParameter name="Trace Model Detailed Level" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.59/@nestedBreakdownElement.8"/>
+              <ownedProcessParameter name="Rule Set Detailed Level Design" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.59/@nestedBreakdownElement.9"/>
+              <ownedProcessParameter direction="out" name="Verdict Detailed System Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.59/@nestedBreakdownElement.10"/>
+              <ownedProcessParameter direction="out" name="Detailed System Analysis Report" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.59/@nestedBreakdownElement.11"/>
+            </nestedBreakdownElement>
+            <nestedBreakdownElement xsi:type="spem:TaskUse" name="Evaluate Detailed System Analysis Report&#xD;&#xA;" task="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.27">
+              <ownedProcessParameter name="Detailed System Analysis Report" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.59/@nestedBreakdownElement.11"/>
+            </nestedBreakdownElement>
+            <nestedBreakdownElement xsi:type="spem:RoleUse" name="Quality Manager" role="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.1"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.59/@nestedBreakdownElement.2" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.59/@nestedBreakdownElement.1"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.59/@nestedBreakdownElement.2" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.59/@nestedBreakdownElement.0"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="System Deployment Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.23"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="System Detailed Design Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.24"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Requirement Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.25"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Trace Model Detailed Level" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.26"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Rule Set Detailed Level Design" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.27"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Verdict Detailed System Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.28"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Detailed System Analysis Report" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.29"/>
+          </nestedBreakdownElement>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.56" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.59"/>
+          <nestedBreakdownElement xsi:type="activity:DecisionNode" name="Iterate?"/>
+          <nestedBreakdownElement xsi:type="activity:DecisionNode" name="Verdict?"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.59" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.61"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.61" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.62"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.61" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.50"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.62" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.30"/>
+          <nestedBreakdownElement xsi:type="activity:ForkNode"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.62" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.67"/>
+          <nestedBreakdownElement xsi:type="spem:Activity" briefDescription="Functional software for virtual prototype is generated in this activity." name="Functional Software for Virtual Prototype Generation">
+            <nestedBreakdownElement xsi:type="spem:TaskUse" name="Generate Functional Software" task="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.29">
+              <ownedProcessParameter direction="out" name="SystemC Code" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.69/@nestedBreakdownElement.3"/>
+              <ownedProcessParameter name="Simulink Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.69/@nestedBreakdownElement.4"/>
+              <ownedProcessParameter name="Yakindu Statechart" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.69/@nestedBreakdownElement.5"/>
+              <ownedProcessParameter name="Detailed Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.69/@nestedBreakdownElement.6"/>
+            </nestedBreakdownElement>
+            <nestedBreakdownElement xsi:type="spem:RoleUse" name="System Architect" role="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.3"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.69/@nestedBreakdownElement.1" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.69/@nestedBreakdownElement.0"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="SystemC Code" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.30"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Simulink Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.31"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Yakindu Statechart" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.32"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Detailed Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.20"/>
+          </nestedBreakdownElement>
+          <nestedBreakdownElement xsi:type="spem:Activity" name="Virtual Prototype Generation"/>
+          <nestedBreakdownElement xsi:type="spem:Activity" name="Virtual Hardware Implementation"/>
+          <nestedBreakdownElement xsi:type="spem:Activity" name="Manual Virtual Prototype Implementation"/>
+          <nestedBreakdownElement xsi:type="spem:Activity" name="Test Execution"/>
+          <nestedBreakdownElement xsi:type="spem:Activity" name="Trace Abstraction"/>
+          <nestedBreakdownElement xsi:type="spem:Activity" name="Test Generation">
+            <nestedBreakdownElement xsi:type="spem:TaskUse" name="Generate Test Code" task="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.1/@ownedMethodContentMember.36">
+              <ownedProcessParameter name="Complete Test Model" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.75/@nestedBreakdownElement.3"/>
+              <ownedProcessParameter direction="out" name="Test Suite" parameterType="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.75/@nestedBreakdownElement.4"/>
+            </nestedBreakdownElement>
+            <nestedBreakdownElement xsi:type="spem:RoleUse" name="Test Engineer" role="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.0/@ownedMethodContentMember.7"/>
+            <nestedBreakdownElement xsi:type="spem:ProcessPerformer" linkedRoleUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.75/@nestedBreakdownElement.1" linkedTaskUse="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.75/@nestedBreakdownElement.0"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Complete Test Model" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.34"/>
+            <nestedBreakdownElement xsi:type="spem:WorkProductUse" name="Test Suite" workProduct="//@ownedMethodPlugin.0/@ownedMethodContentPackage.0/@ownedMethodContentMember.2/@ownedMethodContentMember.36"/>
+          </nestedBreakdownElement>
+          <nestedBreakdownElement xsi:type="spem:Activity" name="Build Virtual Prototype"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.67" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.75"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.67" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.71"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.67" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.70"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.67" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.69"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.70" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.72"/>
+          <nestedBreakdownElement xsi:type="activity:JoinNode"/>
+          <nestedBreakdownElement xsi:type="spem:Activity" name="Simulation"/>
+          <nestedBreakdownElement xsi:type="spem:Activity" name="Formal Analysis Details Design"/>
+          <nestedBreakdownElement xsi:type="spem:Activity" name="Trace Visualisation"/>
+          <nestedBreakdownElement xsi:type="activity:ForkNode"/>
+          <nestedBreakdownElement xsi:type="activity:JoinNode"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.85" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.87"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.74" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.87"/>
+          <nestedBreakdownElement xsi:type="activity:DecisionNode" name="Need adjustement?"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.87" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.90"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.90" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.1"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.69" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.82"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.71" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.82"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.72" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.82"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.75" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.82"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.82" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.76"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.76" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.86"/>
+          <nestedBreakdownElement xsi:type="activity:JoinNode"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.86" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.84"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.86" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.83"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.86" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.73"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.84" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.99"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.83" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.99"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.73" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.99"/>
+          <nestedBreakdownElement xsi:type="activity:ForkNode"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.106" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.74"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.106" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.85"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.99" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.106"/>
+          <nestedBreakdownElement xsi:type="activity:Edge" source="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.90" target="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.0/@ownedProcessMember.0/@nestedBreakdownElement.67"/>
+        </ownedProcessMember>
+      </ownedProcessMember>
+      <ownedProcessMember xsi:type="uma:ProcessComponentPackage" name="Process Components">
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="WP1:Industrial Cases">
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 1.1" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.6"/>
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 1.2" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.7"/>
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 1.3" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.8"/>
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 1.4" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.9"/>
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 1.5" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.10"/>
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 1.6" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.11"/>
+        </ownedProcessMember>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="WP2: Methodological and Tool Integration Framework">
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 2.1" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.12"/>
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 2.2" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.13"/>
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 2.3" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.14"/>
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 2.4" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.15"/>
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 2.5" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.16"/>
+        </ownedProcessMember>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="WP3: Execution Framework">
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 3.1" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.17"/>
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 3.2" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.18"/>
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 3.3" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.19"/>
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 3.4" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.20"/>
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 3.5" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.21"/>
+        </ownedProcessMember>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="WP4: NFP Analysis">
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 4.1" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.22"/>
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 4.2" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.23"/>
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 4.3" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.24"/>
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 4.4" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.25"/>
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 4.5" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.26"/>
+        </ownedProcessMember>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="WP5: Model-Based Testing">
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 5.1" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.27"/>
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 5.2" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.28"/>
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 5.3" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.29"/>
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 5.4" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.30"/>
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 5.5" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.31"/>
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 5.6" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.32"/>
+        </ownedProcessMember>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="WP6: Dissemination and Exploitation">
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 6.1" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.33"/>
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 6.2" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.34"/>
+          <ownedProcessMember xsi:type="spem:ProcessComponentUse" name="Task 6.3" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.35"/>
+        </ownedProcessMember>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 1.1"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 1.2"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 1.3"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 1.4"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 1.5"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 1.6"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 2.1"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 2.2"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 2.3"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 2.4"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 2.5"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 3.1"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 3.2"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 3.3"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 3.4"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 3.5"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 4.1"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 4.2"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 4.3"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 4.4"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 4.5"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 5.1"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 5.2"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 5.3"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 5.4"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 5.5"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 5.6"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 6.1"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 6.2"/>
+        <ownedProcessMember xsi:type="spem:ProcessComponent" name="Task 6.3"/>
+      </ownedProcessMember>
+      <ownedProcessMember xsi:type="uma:DeliveryProcessPackage" name="Delivery Processes">
+        <ownedProcessMember xsi:type="uma:DeliveryProcess" name="VERDE Platform">
+          <nestedBreakdownElement xsi:type="spem:ProcessComponentUse" name="WP1:Industrial Cases" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.0"/>
+          <nestedBreakdownElement xsi:type="spem:ProcessComponentUse" name="WP2: Methodological and Tool Integration Framework" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.1"/>
+          <nestedBreakdownElement xsi:type="spem:ProcessComponentUse" name="WP3: Execution Framework" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.2"/>
+          <nestedBreakdownElement xsi:type="spem:ProcessComponentUse" name="WP4: NFP Analysis" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.3"/>
+          <nestedBreakdownElement xsi:type="spem:ProcessComponentUse" name="WP5: Model-Based Testing" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.4"/>
+          <nestedBreakdownElement xsi:type="spem:ProcessComponentUse" name="WP6: Dissemination and Exploitation" processComponent="//@ownedMethodPlugin.0/@ownedProcessPackage.0/@ownedProcessMember.1/@ownedProcessMember.5"/>
+        </ownedProcessMember>
+      </ownedProcessMember>
+    </ownedProcessPackage>
+  </ownedMethodPlugin>
+  <configurationPackage name="Configurations"/>
+</spem:MethodLibrary>

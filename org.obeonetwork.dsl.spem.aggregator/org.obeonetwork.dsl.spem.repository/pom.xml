@@ -1,0 +1,13 @@
+<project>
+ <modelVersion>4.0.0</modelVersion>
+ <parent>
+  <groupId>Spem</groupId>
+  <artifactId>org.obeonetwork.dsl.spem.parent</artifactId>
+  <version>0.7.0-SNAPSHOT</version>
+  <relativePath>../org.obeonetwork.dsl.spem.parent/pom.xml</relativePath>
+ </parent>
+ <groupId>Spem</groupId>
+ <artifactId>org.obeonetwork.dsl.spem.repository</artifactId>
+ <version>0.7.0-SNAPSHOT</version>
+ <packaging>eclipse-repository</packaging>
+</project>
